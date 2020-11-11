@@ -1,5 +1,5 @@
 <?php
-namespace com\zoho\crm\api\util;
+namespace com\zoho\crm\api;
 
 use com\zoho\crm\api\exception\SDKException;
 
