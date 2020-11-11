@@ -1,8 +1,8 @@
-# PHP SDK
+# ZOHO CRM PHP SDK
 
 ## Overview
 
-PHP SDK offers a way to create client PHP applications that can be integrated with Zoho CRM.
+Zoho CRM PHP SDK offers a way to create client PHP applications that can be integrated with Zoho CRM.
 
 ## Registering a Zoho Client
 
