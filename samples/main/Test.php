@@ -196,7 +196,7 @@ class Test
 
     public static function BulkWrite()
 	{
-		$absoluteFilePath = "/Users/abc-XXX/Desktop/py.html";
+		$absoluteFilePath = "/Users/abc-XXX/Desktop/Leads.zip";
 		
 		$orgID = "673xxx";
 		
