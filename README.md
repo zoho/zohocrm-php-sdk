@@ -324,7 +324,7 @@ Before you get started with creating your PHP application, you need to register 
 
     $pickListValidation = false;
 
-     $sdkConfig = new SDKConfigBuilder()->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+     $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
     ```
 
 - Create an instance of RequestProxy containing the proxy properties of the user.
@@ -418,7 +418,7 @@ class Initialize
         $pickListValidation = false;
 
         // Create an instance of SDKConfig
-        $sdkConfig = new SDKConfigBuilder()->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
 
         $resourcePath = "/Users/user_name/Documents/phpsdk-application";
 
@@ -621,7 +621,7 @@ class MultiThread
         $pickListValidation = false;
 
         // Create an instance of SDKConfig
-        $sdkConfig = new SDKConfigBuilder()->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
 
         $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
@@ -769,7 +769,7 @@ class Record
         $pickListValidation = false;
 
         // Create an instance of SDKConfig
-        $sdkConfig = new SDKConfigBuilder()->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
   
         $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
