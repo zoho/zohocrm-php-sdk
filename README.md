@@ -363,9 +363,9 @@ use com\zoho\crm\api\SDKConfigBuilder;
 
 use com\zoho\crm\api\dc\USDataCenter;
 
-use com\zoho\crm\api\logger\Logger;
+use com\zoho\api\logger\Logger;
 
-use com\zoho\crm\api\logger\Levels;
+use com\zoho\api\logger\Levels;
 
 class Initialize
 {
@@ -584,9 +584,9 @@ use com\zoho\crm\api\SDKConfigBuilder;
 
 use com\zoho\crm\api\dc\USDataCenter;
 
-use com\zoho\crm\api\logger\Logger;
+use com\zoho\api\logger\Logger;
 
-use com\zoho\crm\api\logger\Levels;
+use com\zoho\api\logger\Levels;
 
 use com\zoho\crm\api\HeaderMap;
 
@@ -716,9 +716,9 @@ use com\zoho\crm\api\SDKConfigBuilder;
 
 use com\zoho\crm\api\dc\USDataCenter;
 
-use com\zoho\crm\api\logger\Logger;
+use com\zoho\api\logger\Logger;
 
-use com\zoho\crm\api\logger\Levels;
+use com\zoho\api\logger\Levels;
 
 use com\zoho\crm\api\record\RecordOperations;
 
