@@ -169,25 +169,7 @@ class JSONConverter extends Converter
 
                     if ($requestInstance instanceof FileDetails)
                     {
-                        if($keyName === Constants::ATTACHMENT_ID)
-                        {
-                            $requestJSON[strtolower($keyName)] = $fieldValue;
-                        }
-                        else if($keyName == Constants::FILE_ID)
-                        {
-                            $requestJSON[strtolower($keyName)] = $fieldValue;
-                        }
-                        else
-                        {
-                            if($fieldValue == null || $fieldValue == "null")
-                            {
-                                $requestJSON[strtolower($keyName)] = null;
-                            }
-                            else
-                            {
-                                $requestJSON[strtolower($keyName)] = $fieldValue;
-                            }
-                        }
+                        $requestJSON[strtolower($keyName)] = (is_null($fieldValue) || $fieldValue == null || $fieldValue == "null") ? null : $fieldValue;
                     }
                     else
                     {
