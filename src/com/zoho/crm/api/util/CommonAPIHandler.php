@@ -393,25 +393,60 @@ class CommonAPIHandler
      */
     public function getConverterClassInstance($encodeType)
     {
-        switch ($encodeType) 
+        switch ($encodeType)
         {
             case "application/json":
             case "text/plain":
+            case "application/ld+json":
                 return new JSONConverter($this);
             case "application/xml":
             case "text/xml":
                 return new XMLConverter($this);
             case "multipart/form-data":
                 return new FormDataConverter($this);
-            case "application/x-download":
             case "image/png":
             case "image/jpeg":
-            case "application/zip":
             case "image/gif":
-            case "text/csv":
             case "image/tiff":
-            case "application/octet-stream":
+            case "image/svg+xml":
+            case "image/bmp":
+            case "image/webp":
+            case "text/csv":
             case "text/html":
+            case "text/css":
+            case "text/javascript":
+            case "text/calendar":
+            case "application/x-download":
+            case "application/zip":
+            case "application/pdf":
+            case "application/java-archive":
+            case "application/javascript":
+            case "application/octet-stream":
+            case "application/xhtml+xml":
+            case "application/x-bzip":
+            case "application/msword":
+            case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+            case "application/gzip":
+            case "application/x-httpd-php":
+            case "application/vnd.ms-powerpoint":
+            case "application/vnd.rar":
+            case "application/x-sh":
+            case "application/x-tar":
+            case "application/vnd.ms-excel":
+            case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+            case "application/x-7z-compressed":
+            case "audio/mpeg":
+            case "audio/x-ms-wma":
+            case "audio/vnd.rn-realaudio":
+            case "audio/x-wav":
+            case "audio/3gpp":
+            case "audio/3gpp2":
+            case "video/mpeg":
+            case "video/mp4":
+            case "video/webm":
+            case "video/3gpp":
+            case "video/3gpp2":
+            case "font/ttf":
                 return new Downloader($this);
         }
 

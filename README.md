@@ -1,5 +1,22 @@
 # ZOHO CRM PHP SDK
 
+## Table Of Contents
+
+* [Overview](#overview)
+* [Registering a Zoho Client](#registering-a-zoho-client)
+* [Environmental Setup](#environmental-setup)
+* [Including the SDK in your project](#including-the-sdk-in-your-project)
+* [Persistence](#token-persistence)
+  * [DataBase Persistence](#database-persistence)
+  * [File Persistence](#file-persistence)
+  * [Custom Persistence](#custom-persistence)
+* [Configuration](#configuration)
+* [Initialization](#initializing-the-application)
+* [Class Hierarchy](#class-hierarchy)
+* [Responses And Exceptions](#responses-and-exceptions)
+* [Multi-User support in the PHP SDK](#multi-user-support-in-the-php-sdk)
+* [Sample Code](#sdk-sample-code)
+
 ## Overview
 
 Zoho CRM PHP SDK offers a way to create client PHP applications that can be integrated with Zoho CRM.
@@ -82,11 +99,12 @@ Token persistence refers to storing and utilizing the authentication tokens that
 
 ### Table of Contents
 
-- DataBase Persistence
+- [DataBase Persistence](#database-persistence)
 
-- File Persistence
+- [File Persistence](#file-persistence)
 
-- Custom Persistence
+- [Custom Persistence](#custom-persistence)
+
 
 ### Implementing OAuth Persistence
 
