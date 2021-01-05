@@ -1103,9 +1103,14 @@ class JSONConverter extends Converter
 
         $sdkName = lcfirst($name[0]);
 
-        for ($nameIndex = 1; $nameIndex < count($name); $nameIndex ++) 
+        for ($nameIndex = 1; $nameIndex < count($name); $nameIndex ++)
         {
-            $firstLetterUppercase = ucfirst($name[$nameIndex]);
+            $firstLetterUppercase = "";
+
+            if(strlen(($name[$nameIndex])) > 0)
+            {
+                $firstLetterUppercase = ucfirst($name[$nameIndex]);
+            }
 
             $sdkName = $sdkName . $firstLetterUppercase;
         }

@@ -843,13 +843,13 @@ class Utility
             return;
         }
 
-        $fieldAPINamesString = ["textarea", "text", "website", "email", "phone", "mediumtext","multiselectlookup", "profileimage"];
+        $fieldAPINamesString = ["textarea", "text", "website", "email", "phone", "mediumtext","multiselectlookup", "profileimage", "autonumber"];
         
         $fieldAPINamesInteger = ["integer"];
         
         $fieldAPINamesBoolean = ["boolean"];
         
-        $fieldAPINamesLong = ["long", "bigint", "autonumber"];
+        $fieldAPINamesLong = ["long", "bigint"];
         
         $fieldAPINamesDouble = ["double", "percent", "lookup", "currency"];
         

@@ -329,7 +329,7 @@ class CommonAPIHandler
                 }
 
                 $converterInstance = $this->getConverterClassInstance(strtolower($responseContentType));
-            
+
                 $returnObject = $converterInstance->getWrappedResponse($response[Constants::RESPONSE], $className);
 
                 if ($returnObject !== null)
