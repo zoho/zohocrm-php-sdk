@@ -311,6 +311,11 @@ class OAuthToken implements Token
         
         curl_setopt($curl_pointer, CURLOPT_CUSTOMREQUEST, Constants::REQUEST_METHOD_POST);
         
+        if(!Initializer::getInitializer()->getSDKConfig()->isSSLVerificationEnabled())
+        {
+            curl_setopt($curl_pointer, CURLOPT_SSL_VERIFYPEER, false);
+        }
+
         $result = curl_exec($curl_pointer);
 
         curl_close($curl_pointer);

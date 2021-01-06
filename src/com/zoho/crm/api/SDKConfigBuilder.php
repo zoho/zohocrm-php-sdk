@@ -10,16 +10,20 @@ class SDKConfigBuilder
 
     private $pickListValidation;
 
+    private $enableSSLVerification;
+
     public function __Construct()
     {
         $this->autoRefreshFields = false;
 
         $this->pickListValidation = true;
+
+        $this->enableSSLVerification = true;
     }
 
     /**
      * This is a setter method to set autoRefreshFields.
-     * @param autoRefreshFields 
+     * @param autoRefreshFields
      */
     public function setAutoRefreshFields(bool $autoRefreshFields)
     {
@@ -40,12 +44,23 @@ class SDKConfigBuilder
     }
 
     /**
+     * This is a setter method to set enableSSLVerification.
+     * @param enableSSLVerification
+     */
+    public function setSSLVerification(bool $enableSSLVerification)
+    {
+        $this->enableSSLVerification = $enableSSLVerification;
+
+        return $this;
+    }
+
+    /**
      * The method to build the SDKConfig instance
      * @returns An instance of SDKConfig
      */
     public function build()
     {
-        return new \com\zoho\crm\api\sdkconfigbuilder\SDKConfig($this->autoRefreshFields, $this->pickListValidation);
+        return new \com\zoho\crm\api\sdkconfigbuilder\SDKConfig($this->autoRefreshFields, $this->pickListValidation, $this->enableSSLVerification);
     }
 }
 
@@ -60,16 +75,21 @@ class SDKConfig
 
     private $pickListValidation;
 
+    private $enableSSLVerification;
+
     /**
      * Creates an instance of SDKConfig with the given parameters
      * @param autoRefreshFields - A boolean representing autoRefreshFields
      * @param pickListValidation - A boolean representing pickListValidation
+     * @param enableSSLVerification - A boolean representing enableSSLVerification
      */
-    public function __Construct(bool $autoRefreshFields, bool $pickListValidation)
+    public function __Construct(bool $autoRefreshFields, bool $pickListValidation, bool $enableSSLVerification)
     {
         $this->autoRefreshFields = $autoRefreshFields;
 
         $this->pickListValidation = $pickListValidation;
+
+        $this->enableSSLVerification = $enableSSLVerification;
     }
 
     /**
@@ -88,6 +108,15 @@ class SDKConfig
     public function getPickListValidation()
     {
         return $this->pickListValidation;
+    }
+
+    /**
+     * This is a getter method to get enableSSLVerification.
+     * @return A boolean representing enableSSLVerification
+     */
+    public function isSSLVerificationEnabled()
+    {
+        return $this->enableSSLVerification;
     }
 }
 ?>
