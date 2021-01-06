@@ -329,20 +329,27 @@ Before you get started with creating your PHP application, you need to register 
 
     ```php
     /*
-    * autoRefreshFields
+    * autoRefreshFields (default value is false)
     * true - all the modules' fields will be auto-refreshed in the background, every hour.
     * false - the fields will not be auto-refreshed in the background. The user can manually delete the file(s) or refresh the fields using methods from ModuleFieldsHandler(com\zoho\crm\api\util\ModuleFieldsHandler)
     *
-    * pickListValidation
+    * pickListValidation (default value is true)
     * A boolean field that validates user input for a pick list field and allows or disallows the addition of a new value to the list.
     * true - the SDK validates the input. If the value does not exist in the pick list, the SDK throws an error.
     * false - the SDK does not validate the input and makes the API request with the user’s input to the pick list
+    *
+    * enableSSLVerification (default value is true)
+    * A boolean field to enable or disable curl certificate verification
+    * true - the SDK verifies the authenticity of certificate
+    * false - the SDK skips the verification
     */
     $autoRefreshFields = false;
 
     $pickListValidation = false;
 
-     $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+    $enableSSLVerification = true;
+
+    $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->build();
     ```
 
 - Create an instance of RequestProxy containing the proxy properties of the user.

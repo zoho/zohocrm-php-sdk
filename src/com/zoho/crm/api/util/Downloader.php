@@ -96,14 +96,19 @@ class Downloader extends Converter
                     $responseHeaders = $response[Constants::HEADERS];
                     
                     $responseContent = $response[Constants::CONTENT];
-                    
-                    $contentDisposition = $responseHeaders[Constants::CONTENT_DISPOSITION];
-                    
-                    if ($contentDisposition == null)
+
+                    $contentDisposition = "";
+
+                    if(array_key_exists(Constants::CONTENT_DISPOSITION, $responseHeaders))
                     {
-                        $contentDisposition = $responseHeaders[Constants::CONTENT_DISPOSITION1];
-                    }
+                        $contentDisposition = $responseHeaders[Constants::CONTENT_DISPOSITION];
                     
+                        if ($contentDisposition == null)
+                        {
+                            $contentDisposition = $responseHeaders[Constants::CONTENT_DISPOSITION1];
+                        }
+                    }
+
                     $fileName = substr($contentDisposition, strrpos($contentDisposition, "'") + 1, strlen($contentDisposition));
                     
                     if (strpos($fileName, "=") !== false)

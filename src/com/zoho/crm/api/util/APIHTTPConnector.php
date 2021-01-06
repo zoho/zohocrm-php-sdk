@@ -193,16 +193,21 @@ class APIHTTPConnector
         }
 
         $this->setQueryHeaders($curl_options);
-        
+
+        if(!Initializer::getInitializer()->getSDKConfig()->isSSLVerificationEnabled())
+        {
+            $curl_options[CURLOPT_SSL_VERIFYPEER] = false;
+        }
+
         curl_setopt_array($curl_pointer, $curl_options);
-        
+
         SDKLogger::info($this->toString());
 
         $response = array();
 
         $response[Constants::RESPONSE] = curl_exec($curl_pointer);
 
-        if (curl_errno($curl_pointer)) 
+        if (curl_errno($curl_pointer))
         {
             $response[Constants::ERROR] = curl_error($curl_pointer);
         }
