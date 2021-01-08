@@ -131,7 +131,7 @@ abstract class Converter
 			}
 		}
 		
-		if (!$check)
+		if (!$check && $value != null)
         {
             $detailsJO[Constants::FIELD] = $memberName;
             
