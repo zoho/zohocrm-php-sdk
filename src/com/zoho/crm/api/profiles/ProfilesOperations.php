@@ -58,12 +58,3 @@ class ProfilesOperations
 
 	}
 } 
-class GetProfilesHeader
-{
-
-}
-
-class GetProfileHeader
-{
-
-}

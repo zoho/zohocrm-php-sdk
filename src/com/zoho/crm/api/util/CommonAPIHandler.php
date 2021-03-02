@@ -275,7 +275,7 @@ class CommonAPIHandler
         
         $convertInstance = null;
        
-        if ($this->contentType != null && (strtolower($this->httpMethod) == strtolower(Constants::REQUEST_METHOD_POST) || strtolower($this->httpMethod) == strtolower(Constants::REQUEST_METHOD_PUT) || strtolower($this->httpMethod) == strtolower(Constants::REQUEST_METHOD_PATCH))) 
+        if ($this->contentType != null && in_array(strtoupper($this->httpMethod), Constants::IS_GENERATE_REQUEST_BODY))
         {
             $requestObject = null;
 

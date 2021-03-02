@@ -61,22 +61,3 @@ class CustomViewsOperations
 
 	}
 } 
-class GetCustomViewsParam
-{
-	public static final function page()
-	{
-		return new Param('page', 'com.zoho.crm.api.CustomViews.GetCustomViewsParam'); 
-
-	}
-	public static final function perPage()
-	{
-		return new Param('per_page', 'com.zoho.crm.api.CustomViews.GetCustomViewsParam'); 
-
-	}
-
-}
-
-class GetCustomViewParam
-{
-
-}

@@ -58,12 +58,17 @@ class Initialize
 
 		$autoRefreshFields = true;
 
-        $pickListValidation = false;
+		$pickListValidation = false;
+
+		$enableSSLVerification = true;
 
 		$builderInstance = new SDKConfigBuilder();
 
-		//Create an instance of SDKConfig
-		$configInstance = $builderInstance->setPickListValidation($pickListValidation)->setAutoRefreshFields($autoRefreshFields)->build();
+		$connectionTimeout = 2; //The number of seconds to wait while trying to connect. Use 0 to wait indefinitely.
+
+    	$timeout = 2; //The maximum number of seconds to allow cURL functions to execute.
+
+    	$configInstance = $builderInstance->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
 		//Create an instance of RequestProxy
 		$requestProxy = new RequestProxy("proxyHost", "proxyPort", "proxyUser", "password");

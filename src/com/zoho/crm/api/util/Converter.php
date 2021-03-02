@@ -131,7 +131,7 @@ abstract class Converter
 			}
 		}
 		
-		if (!$check)
+		if (!$check && $value != null)
         {
             $detailsJO[Constants::FIELD] = $memberName;
             
@@ -163,7 +163,9 @@ abstract class Converter
 			
 			    $detailsJO[Constants::CLASS_KEY] = $className;
 				
-			    $detailsJO[Constants::INDEX] = $instanceNumber;
+				$detailsJO[Constants::INDEX] = $instanceNumber;
+				
+				$detailsJO[Constants::GIVEN_VALUE] = $value;
 				
 			    $detailsJO[Constants::ACCEPTED_VALUES] =  $valuesJA;
 				

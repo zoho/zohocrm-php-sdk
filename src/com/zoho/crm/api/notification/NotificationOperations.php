@@ -127,37 +127,3 @@ class NotificationOperations
 
 	}
 } 
-class GetNotificationDetailsParam
-{
-	public static final function page()
-	{
-		return new Param('page', 'com.zoho.crm.api.Notification.GetNotificationDetailsParam'); 
-
-	}
-	public static final function perPage()
-	{
-		return new Param('per_page', 'com.zoho.crm.api.Notification.GetNotificationDetailsParam'); 
-
-	}
-	public static final function channelId()
-	{
-		return new Param('channel_id', 'com.zoho.crm.api.Notification.GetNotificationDetailsParam'); 
-
-	}
-	public static final function module()
-	{
-		return new Param('module', 'com.zoho.crm.api.Notification.GetNotificationDetailsParam'); 
-
-	}
-
-}
-
-class DisableNotificationsParam
-{
-	public static final function channelIds()
-	{
-		return new Param('channel_ids', 'com.zoho.crm.api.Notification.DisableNotificationsParam'); 
-
-	}
-
-}
