@@ -58,12 +58,3 @@ class LayoutsOperations
 
 	}
 } 
-class GetLayoutsParam
-{
-
-}
-
-class GetLayoutParam
-{
-
-}

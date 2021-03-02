@@ -58,12 +58,3 @@ class RelatedListsOperations
 
 	}
 } 
-class GetRelatedListsParam
-{
-
-}
-
-class GetRelatedListParam
-{
-
-}

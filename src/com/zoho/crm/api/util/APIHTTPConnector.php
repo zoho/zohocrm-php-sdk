@@ -149,6 +149,10 @@ class APIHTTPConnector
         }
         
         $curl_options[CURLOPT_RETURNTRANSFER] = true;
+
+        $curl_options[CURLOPT_TIMEOUT] = Initializer::getInitializer()->getSDKConfig()->timeout();
+
+        $curl_options[CURLOPT_CONNECTTIMEOUT] = Initializer::getInitializer()->getSDKConfig()->connectionTimeout();
         
         $curl_options[CURLOPT_HEADER] = 1;
         

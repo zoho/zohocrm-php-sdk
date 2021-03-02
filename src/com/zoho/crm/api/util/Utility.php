@@ -45,6 +45,8 @@ class Utility
 
     private static $sdkException = 'com\zoho\crm\api\exception\SDKException';
 
+    public static $apiSupportedModule = array();
+
     /**
      * This method to fetch field details of the current module for the current user and store the result in a JSON file.
      * @param string $moduleAPIName
@@ -117,37 +119,37 @@ class Utility
 
                     file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
                 }
-            } 
+            }
             else if(Initializer::getInitializer()->getSDKConfig()->getautoRefreshFields())
             {
                 self::$newFile = true;
 
                 self::fillDataType();
 
-                $moduleAPINames = self::getModules(null);
+                self::$apiSupportedModule = count(self::$apiSupportedModule) > 0 ? self::$apiSupportedModule : self::getAllModules(null);
 
                 $recordFieldDetailsJson = array();
 
                 $recordFieldDetailsJson[Constants::FIELDS_LAST_MODIFIED_TIME] = round(microtime(true) * 1000);
 
-                foreach($moduleAPINames as $module)
+                foreach (self::$apiSupportedModule as $module => $value)
 				{
-					if(!array_key_exists(strtolower($module), $recordFieldDetailsJson))
+					if(!array_key_exists($module, $recordFieldDetailsJson))
 					{
-						$recordFieldDetailsJson[strtolower($module)] = array();
-						
+						$recordFieldDetailsJson[$module] = array();
+
 						file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
 
                         $fieldDetails = Utility::getFieldDetails($module);
-                        
+
                         $recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
 
-                        $recordFieldDetailsJson[strtolower($module)] = $fieldDetails;
+                        $recordFieldDetailsJson[$module] = $fieldDetails;
 
                         file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
 					}
 				}
-				
+
 				self::$newFile = false;
             }
             else if(self::$forceRefresh && !self::$getModifiedModules)
@@ -244,8 +246,8 @@ class Utility
     }
 
     private static function modifyFields($recordFieldDetailsPath, $modifiedTime)
-	{		
-        $modifiedModules = self::getModules($modifiedTime);
+	{
+        $modifiedModules = self::getAllModules($modifiedTime);
         
 		$recordFieldDetailsJson = Initializer::getJSON($recordFieldDetailsPath);
 		
@@ -253,19 +255,19 @@ class Utility
 		
 		file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
 		
-		if(!empty($modifiedModules))
+		if(count($modifiedModules) > 0)
 		{
-			foreach($modifiedModules as $module)
+			foreach($modifiedModules as $module => $value)
 			{
-				if(array_key_exists(strtolower($module), $recordFieldDetailsJson))
+				if(array_key_exists($module, $recordFieldDetailsJson))
 				{
-					unset($recordFieldDetailsJson[strtolower($module)]);
+					unset($recordFieldDetailsJson[$module]);
 				}
 			}
             
             file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJson));
             
-			foreach($modifiedModules as $module)
+			foreach($modifiedModules as $module => $value)
 			{
 				Utility::getFields($module);
 			}
@@ -276,9 +278,9 @@ class Utility
     {
         $subformModules = array();
 
-        $fieldsJSON = $recordFieldDetailsJson[strtolower($module)];
+        $fieldsJSON = $recordFieldDetailsJson[$module];
 
-        foreach ($fieldsJSON as $key => $value) 
+        foreach ($fieldsJSON as $key => $value)
         {
             if(array_key_exists(Constants::SUBFORM, $value) && $value[Constants::SUBFORM] == true && $recordFieldDetailsJson[$value[Constants::MODULE]])
             {
@@ -286,7 +288,7 @@ class Utility
             }
         }
 
-        unset($recordFieldDetailsJson[strtolower($module)]);
+        unset($recordFieldDetailsJson[$module]);
 
         if(count($subformModules) > 0)
         {
@@ -297,7 +299,7 @@ class Utility
         }
 
     }
-    
+
     private static function getFileName()
 	{
         $fileName = Initializer::getInitializer()->getUser()->getEmail();
@@ -307,10 +309,10 @@ class Utility
         $input = unpack('C*', utf8_encode($fileName));
 
         $str = base64_encode(implode(array_map("chr", $input)));
-        
+
         return  $str . ".json";
     }
-    
+
     public static function getRelatedLists($relatedModuleName, $moduleAPIName, &$commonAPIHandler)
 	{
 		try
@@ -321,7 +323,7 @@ class Utility
 			
 			$resourcesPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
 
-            if (!file_exists($resourcesPath)) 
+            if (!file_exists($resourcesPath))
             {
                 mkdir($resourcesPath);
             }
@@ -508,7 +510,7 @@ class Utility
                     $fieldsDetails[$field->getAPIName()] = $fieldDetail;
                 }
 
-                if(in_array(strtolower($moduleAPIName), Constants::INVENTORY_MODULES))
+                if(in_array($moduleAPIName, Constants::INVENTORY_MODULES))
                 {
                     $fieldDetail = array();
                     
@@ -581,7 +583,12 @@ class Utility
         return null;
     }
 
-    private static function getModules($header)
+    public static function getModules()
+	{
+        // self::$apiSupportedModule = count(self::$apiSupportedModule) > 0 ? self::$apiSupportedModule : self::getAllModules(null);
+    }
+
+    private static function getAllModules($header)
 	{
 		$apiNames = array();
 		
@@ -623,7 +630,7 @@ class Utility
                 {
                     if($module->getAPISupported())
                     {
-                        array_push($apiNames, $module->getAPIName());
+                        $apiNames[strtolower($module->getAPIName())] = $module->getGeneratedType()->getValue();
                     }
                 }
             }

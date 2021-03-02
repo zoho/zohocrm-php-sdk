@@ -61,17 +61,3 @@ class FieldsOperations
 
 	}
 } 
-class GetFieldsParam
-{
-	public static final function type()
-	{
-		return new Param('type', 'com.zoho.crm.api.Fields.GetFieldsParam'); 
-
-	}
-
-}
-
-class GetFieldParam
-{
-
-}

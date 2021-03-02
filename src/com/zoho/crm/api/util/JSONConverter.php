@@ -169,7 +169,25 @@ class JSONConverter extends Converter
 
                     if ($requestInstance instanceof FileDetails)
                     {
-                        $requestJSON[strtolower($keyName)] = (is_null($fieldValue) || $fieldValue == null || $fieldValue == "null") ? null : $fieldValue;
+                        if($keyName === Constants::ATTACHMENT_ID)
+                        {
+                            $requestJSON[strtolower($keyName)] = $fieldValue;
+                        }
+                        else if($keyName == Constants::FILE_ID)
+                        {
+                            $requestJSON[strtolower($keyName)] = $fieldValue;
+                        }
+                        else
+                        {
+                            if($fieldValue == null || $fieldValue == "null")
+                            {
+                                $requestJSON[strtolower($keyName)] = null;
+                            }
+                            else
+                            {
+                                $requestJSON[strtolower($keyName)] = $fieldValue;
+                            }
+                        }
                     }
                     else
                     {
@@ -1103,7 +1121,7 @@ class JSONConverter extends Converter
 
         $sdkName = lcfirst($name[0]);
 
-        for ($nameIndex = 1; $nameIndex < count($name); $nameIndex ++)
+        for ($nameIndex = 1; $nameIndex < count($name); $nameIndex ++) 
         {
             $firstLetterUppercase = "";
 

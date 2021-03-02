@@ -7,9 +7,9 @@ namespace com\zoho\crm\api\util;
 class Constants
 {
     const FILE_ERROR = "file_error";
-        
+
     const FILE_DOES_NOT_EXISTS = "file does not exists";
-        
+
     const FIELD_DETAILS_DIRECTORY = "resources";
 
     const PACKAGE_NAMESPACE = "com\\zoho\\crm\\api";
@@ -35,37 +35,37 @@ class Constants
     const REQUEST_METHOD_GET = "GET";
 
     const REQUEST_METHOD_PUT = "PUT";
-    
+
     const REQUEST_METHOD_PATCH = "PATCH";
-    
+
     const PROXY_SETTINGS = "Proxy settings - ";
-    
+
     const REQUEST_PROXY_ERROR = "REQUESTPROXY ERROR";
-    
+
     const HOST_ERROR_MESSAGE = "Host MUST NOT be null.";
-    
+
     const PORT_ERROR_MESSAGE = "Port MUST NOT be null.";
-    
+
     const USER_MAIL_NULL_ERROR = "USER MAIL NULL ERROR";
-    
+
     const USER_MAIL_NULL_ERROR_MESSAGE = "User Mail MUST NOT be null. Use setUserMail() to set value.";
-    
+
     const PROXY_HOST = "Host: ";
-    
+
     const PROXY_PORT = "Port: ";
-    
+
     const PROXY_USER = "User: ";
-    
+
     const PROXY_DOMAIN = "Domain: ";
 
     const REQUEST_METHOD_DELETE = "DELETE";
 
     const REQUEST_CATEGORY_READ = "READ";
-	
+
 	const REQUEST_CATEGORY_CREATE = "CREATE";
-	
+
     const REQUEST_CATEGORY_UPDATE = "UPDATE";
-    
+
     const REQUEST_CATEGORY_ACTION = "ACTION";
 
     const CODE = "code";
@@ -215,19 +215,19 @@ class Constants
     const MYSQL_PORT_NUMBER = "3306";
 
     const GET_TOKEN_DB_ERROR = "Exception in getToken - DBStore : ";
-    
+
     const GET_TOKENS_DB_ERROR = "Exception in getTokens - DBStore : ";
 
     const TOKEN_STORE = "TOKEN_STORE";
-    
+
     const DELETE_TOKENS_FILE_ERROR = "Exception in deleteTokens - FileStore : ";
 
     const SAVE_TOKEN_DB_ERROR = "Exception in saveToken - DBStore : ";
 
     const DELETE_TOKEN_DB_ERROR = "Exception in deleteToken - DBStore : ";
-    
+
     const DELETE_TOKENS_DB_ERROR = "Exception in deleteTokens - DBStore : ";
-    
+
     const DB_ERROR = "Failed to connect to MySQL : ";
 
     const USER_MAIL = "user_mail";
@@ -237,7 +237,7 @@ class Constants
     const EXPIRY_TIME = "expiry_time";
 
     const GET_TOKEN_FILE_ERROR = "Exception in getToken - FileStore : ";
-    
+
     const GET_TOKENS_FILE_ERROR = "Exception in getTokens - FileStore : ";
 
     const SAVE_TOKEN_FILE_ERROR = "Exception in saveToken - FileStore : ";
@@ -329,7 +329,7 @@ class Constants
     const IS_KEY_MODIFIED = "isKeyModified";
 
     const REQUIRED = "required";
-    
+
     const REQUIRED_IN_UPDATE = "required_in_update";
 
     const MANDATORY_KEY_ERROR = "Value missing or null for mandatory key(s) ";
@@ -407,11 +407,11 @@ class Constants
     const KEYSTOSKIP = array("Created_Time", "Modified_Time", "Created_By", "Modified_By", "Tag");
 
     const INVENTORY_MODULES = array("invoices", "sales_orders","purchase_orders","quotes");
-    
+
     const NOTES = "Notes";
-    
+
     const ATTACHMENTS = '$attachments';
-    
+
     const ATTACHMENTS_NAMESPACE = "com.zoho.crm.api.attachments.Attachment";
 
     const LINE_TAX = '$line_tax';
@@ -419,11 +419,11 @@ class Constants
     const LINETAX = "com\\zoho\\crm\\api\\record\\LineTax";
 
     const PRODUCT_DETAILS = "product_details";
-	
+
 	const PRICING_DETAILS = "pricing_details";
-	
+
     const PARTICIPANT_API_NAME = "participants";
-    
+
     const PRICE_BOOKS = "price_books";
 
     const EVENTS = "events";
@@ -437,11 +437,11 @@ class Constants
     const LOOKUP = "lookup";
 
     const CONSENT_LOOKUP = "consent_lookup";
-    
+
     const SKIP_MANDATORY = "skip_mandatory";
-	
+
     const SE_MODULE = "se_module";
-    
+
     const FILE_NAMESPACE = "com\\zoho\\crm\\api\\util\\StreamWrapper";
 
     const DATETIME_NAMESPACE = "DateTime";
@@ -464,7 +464,7 @@ class Constants
 
     const FORM_REQUEST_EXCEPTION = "Exception in forming request body : ";
 
-    const SDK_VERSION = "3.0.1";
+    const SDK_VERSION = "3.0.2";
 
     const API_CALL_EXCEPTION = "Exception in current API call execution : ";
 
@@ -485,9 +485,9 @@ class Constants
     const INITIALIZATION_ERROR = "INITIALIZATION ERROR";
 
     const INITIALIZATION_EXCEPTION = "Exception in initialization : ";
-    
+
     const SWITCH_USER_ERROR = "SWITCH_USER ERROR";
-    
+
     const SWITCH_USER_EXCEPTION = "Exception in switchUser : ";
 
     const DELETE_FIELD_FILE_ERROR = "Exception in deleting Current User Fields file : ";
@@ -499,7 +499,7 @@ class Constants
     const IF_MODIFIED_SINCE = "If-Modified-Since";
 
     const MODULE_RESPONSEWRAPPER = "com\zoho\crm\api\modules\ResponseWrapper";
-    
+
     const MODULE_API_EXCEPTION = "com\zoho\crm\api\modules\APIException";
 
     const JSON_DETAILS_FILE_PATH = "src/resources/JSONDetails.json";
@@ -513,43 +513,43 @@ class Constants
     const HEADER_OR_PARAM_NAME = "HEADER OR PARAM";
 
     const URL = "URL";
-	
+
 	const PARAMS = "PARAMS";
-	
+
 	const PARAMETER_NULL_ERROR = "NULL PARAMETER ERROR";
-	
+
 	const HEADER_NULL_ERROR = "NULL HEADER ERROR";
-	
+
 	const PARAM_NAME_NULL_ERROR = "NULL PARAM NAME ERROR";
-	
+
 	const HEADER_NAME_NULL_ERROR = "NULL HEADER NAME ERROR";
-	
+
 	const PARAM_NAME_NULL_ERROR_MESSAGE = "Param Name MUST NOT be null";
-	
+
 	const HEADER_NAME_NULL_ERROR_MESSAGE = "Header Name MUST NOT be null";
-	
+
 	const NULL_VALUE_ERROR_MESSAGE = " MUST NOT be null";
-	
+
 	const PARAM_INSTANCE_NULL_ERROR = "Param<T> Instance MUST NOT be null";
-	
+
 	const HEADER_INSTANCE_NULL_ERROR = "Header<T> Instance MUST NOT be null";
-	
+
 	const CANT_DISCLOSE = " ## can't disclose ## ";
-	
+
 	const INITIALIZATION_SUCCESSFUL = "Initialization successful ";
-	
+
 	const INITIALIZATION_SWITCHED = "Initialization switched ";
-	
+
 	const IN_ENVIRONMENT = " in Environment : ";
-	
+
 	const FOR_EMAIL_ID = "for Email Id : ";
 
     const REFRESH_TOKEN_MESSAGE = "Access Token has expired. Hence refreshing.";
 
     const RESOURCE_PATH_ERROR_MESSAGE = "Resource Path MUST NOT be null/empty : ";
-	
+
     const RESOURCE_PATH = "EMPTY_RESOURCE_PATH";
-    
+
     const API_EXCEPTION = "API_EXCEPTION";
 
     const UNDERSCORE = "_";
@@ -587,9 +587,9 @@ class Constants
     const MANDATORY_KEY_NULL_ERROR = "Null Value for mandatory key : ";
 
     const CALLS = "Calls";
-	
+
     const CALL_DURATION = "Call_Duration";
-    
+
     const PRIMARY_KEY_ERROR = "Value null or missing for required key(s) : ";
 
     const FORMULA = "formula";
@@ -597,13 +597,13 @@ class Constants
     const PICKLIST = "picklist";
 
     const NULL_VALUE = "null";
-    
+
     const UNSUPPORTED_IN_API = "API UNSUPPORTED OPERATION";
-    
+
     const UNSUPPORTED_IN_API_MESSAGE = "Operation is not supported by API";
 
     const USER = "\$user";
-    
+
     const ENVIRONMENT = "\$environment";
 
     const STORE = "\$store";
@@ -619,5 +619,21 @@ class Constants
     const SDK_UNINITIALIZATION_MESSAGE = "SDK is UnInitialized";
 
     const GIVEN_LENGTH = "given-length";
+
+    const GIVEN_VALUE = "given-value";
+
+    const IS_GENERATE_REQUEST_BODY = array(Constants::REQUEST_METHOD_PATCH, Constants::REQUEST_METHOD_POST, Constants::REQUEST_METHOD_PUT);
+
+    const PHOTO = "photo";
+
+    const CRM = "crm";
+
+    const API_VERSION = "v2";
+
+    const PHOTO_SUPPORTED_MODULES = array("leads", "contacts", "accounts", "products", "vendors");
+
+    const PHOTO_UPLOAD_ERROR_MESSAGE  = "The given module is not supported in API.";
+
+    const INVALID_MODULE  = "INVALID_MODULE";
 }
 ?>

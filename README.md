@@ -74,11 +74,11 @@ You can include the SDK to your project using:
 - Install **PHP SDK**.
 
   - Navigate to the workspace of your client app.
-  
+
   - Run the command below:
 
     ```sh
-    composer require zohocrm/php-sdk:3.0.1
+    composer require zohocrm/php-sdk:3.0.2
     ```
 
   - The PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
@@ -90,7 +90,7 @@ You can include the SDK to your project using:
     ```php
     require 'vendor/autoload.php';
     ```
-  
+
   Through this line, you can access all the functionalities of the PHP SDK. The namespaces of the class to be used must be included within the "use" statement.
 
 ## Token Persistence
@@ -246,7 +246,7 @@ class CustomStore implements TokenStore
 
   /**
    * @return array  An array of Token (com\zoho\api\authenticator\OAuthToken) class instances
-   */ 
+   */
     public function getTokens()
     {
         //Add code to retrieve all the stored tokens
@@ -322,7 +322,7 @@ Before you get started with creating your PHP application, you need to register 
 
     $tokenstore = new DBStore("hostName", "dataBaseName", "userName", "password", "portNumber");
 
-    // $tokenstore = new FileStore("absolute_file_path");  
+    // $tokenstore = new FileStore("absolute_file_path");
     ```
 
 - Create an instance of SDKConfig containing SDK configurations.
@@ -349,7 +349,11 @@ Before you get started with creating your PHP application, you need to register 
 
     $enableSSLVerification = true;
 
-    $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->build();
+    $connectionTimeout = 2; //The number of seconds to wait while trying to connect. Use 0 to wait indefinitely.
+
+    $timeout = 2; //The maximum number of seconds to allow cURL functions to execute.
+
+    $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
     ```
 
 - Create an instance of RequestProxy containing the proxy properties of the user.
@@ -442,8 +446,11 @@ class Initialize
 
         $pickListValidation = false;
 
-        // Create an instance of SDKConfig
-        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+        $connectionTimeout = 2;
+
+        $timeout = 2;
+
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
         $resourcePath = "/Users/user_name/Documents/phpsdk-application";
 
@@ -489,7 +496,7 @@ All other exceptions such as SDK anomalies and other unexpected behaviours are t
   - **APIResponse&lt;RecordActionHandler&gt;**
 
 - For getting Record Count for a specific Tag operation
-  
+
   - **APIResponse&lt;CountHandler&gt;**
 
 - For operations involving BaseCurrency
@@ -645,8 +652,11 @@ class MultiThread
 
         $pickListValidation = false;
 
-        // Create an instance of SDKConfig
-        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
+        $connectionTimeout = 2;
+
+        $timeout = 2;
+
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
 
         $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
@@ -793,9 +803,12 @@ class Record
 
         $pickListValidation = false;
 
-        // Create an instance of SDKConfig
-        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->build();
-  
+        $connectionTimeout = 2;
+
+        $timeout = 2;
+
+        $sdkConfig = (new SDKConfigBuilder())->setAutoRefreshFields($autoRefreshFields)->setPickListValidation($pickListValidation)->setSSLVerification($enableSSLVerification)->connectionTimeout($connectionTimeout)->timeout($timeout)->build();
+
         $resourcePath ="/Users/user_name/Documents/phpsdk-application";
 
        /*

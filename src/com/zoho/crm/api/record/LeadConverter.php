@@ -13,6 +13,7 @@ class LeadConverter implements Model
 	private  $contacts;
 	private  $assignTo;
 	private  $deals;
+	private  $carryOverTags;
 	private  $keyModified=array();
 
 	/**
@@ -159,6 +160,27 @@ class LeadConverter implements Model
 	{
 		$this->deals=$deals; 
 		$this->keyModified['Deals'] = 1; 
+
+	}
+
+	/**
+	 * The method to get the carryOverTags
+	 * @return CarryOverTags An instance of CarryOverTags
+	 */
+	public  function getCarryOverTags()
+	{
+		return $this->carryOverTags; 
+
+	}
+
+	/**
+	 * The method to set the value to carryOverTags
+	 * @param CarryOverTags $carryOverTags An instance of CarryOverTags
+	 */
+	public  function setCarryOverTags(CarryOverTags $carryOverTags)
+	{
+		$this->carryOverTags=$carryOverTags; 
+		$this->keyModified['carry_over_tags'] = 1; 
 
 	}
 

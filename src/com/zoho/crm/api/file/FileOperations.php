@@ -51,22 +51,3 @@ class FileOperations
 
 	}
 } 
-class UploadFilesParam
-{
-	public static final function type()
-	{
-		return new Param('type', 'com.zoho.crm.api.File.UploadFilesParam'); 
-
-	}
-
-}
-
-class GetFileParam
-{
-	public static final function id()
-	{
-		return new Param('id', 'com.zoho.crm.api.File.GetFileParam'); 
-
-	}
-
-}

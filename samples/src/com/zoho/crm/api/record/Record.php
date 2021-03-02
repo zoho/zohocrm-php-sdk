@@ -93,6 +93,8 @@ use com\zoho\crm\api\record\Consent;
 
 use com\zoho\crm\api\attachments\Attachment;
 
+use com\zoho\crm\api\record\CarryOverTags;
+
 class Record
 {
 	/**
@@ -3542,6 +3544,16 @@ class Record
 		$deals->setTag($tagList);
 		
 		// $record1->setDeals($deals);
+
+		$carryOverTags = new CarryOverTags();
+		
+		$carryOverTags->setAccounts(["TagName"]);
+		
+		$carryOverTags->setContacts(["TagName"]);
+		
+		$carryOverTags->setDeals(["TagName"]);
+		
+		$record1->setCarryOverTags($carryOverTags);
 		
 		//Add Record instance to the list
 		array_push($data, $record1);
