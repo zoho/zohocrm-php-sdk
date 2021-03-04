@@ -210,6 +210,8 @@ class Constants
 
     const MYSQL_DATABASE_NAME = "zohooauth";
 
+    const MYSQL_TABLE_NAME = 'oauthtoken';
+
     const MYSQL_USER_NAME = "root";
 
     const MYSQL_PORT_NUMBER = "3306";

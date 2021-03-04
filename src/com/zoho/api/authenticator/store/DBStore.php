@@ -28,7 +28,9 @@ class DBStore implements TokenStore
     private $host = null;
     
     private $databaseName = null;
-    
+
+    private $tableName = null;
+
     /**
      * Create an DBStore class instance with the specified parameters.
      * @param string $host A string containing the DataBase host name.
@@ -37,7 +39,7 @@ class DBStore implements TokenStore
      * @param string $password A String containing the DataBase password.
      * @param string $portNumber A String containing the DataBase port number.
      */
-    public function __construct($host = null, $databaseName = null, $userName = null, $password = null, $portNumber = null)
+    public function __construct($host = null, $databaseName = null, $userName = null, $password = null, $portNumber = null, $tableName = null)
     {
         $this->host = $host != null ? $host : Constants::MYSQL_HOST;
         
@@ -48,6 +50,8 @@ class DBStore implements TokenStore
         $this->password = $password != null ? $password : "";
         
         $this->portNumber = $portNumber != null ? $portNumber : Constants::MYSQL_PORT_NUMBER;
+
+        $this->tableName = $tableName != null ? $tableName : Constants::MYSQL_TABLE_NAME;
     }
     
     public function getToken($user, $token)
@@ -107,9 +111,9 @@ class DBStore implements TokenStore
                 $this->deleteToken($token);
             
                 $connection = $this->getMysqlConnection();
-            
-                $query = "INSERT INTO oauthtoken(user_mail,client_id,refresh_token,access_token,grant_token,expiry_time) VALUES(?,?,?,?,?,?)";
-            
+
+                $query = "INSERT INTO " . $this->tableName . "(user_mail,client_id,refresh_token,access_token,grant_token,expiry_time) VALUES(?,?,?,?,?,?)";
+
                 $stmt = mysqli_prepare($connection, $query);
 
                 $email = $user->getEmail();
@@ -209,8 +213,8 @@ class DBStore implements TokenStore
             $connection = $this->getMysqlConnection();
             
             {
-                $query = "select * from oauthtoken;";
-                
+                $query = "select * from " . $this->tableName . ";";
+
                 $result = mysqli_query($connection, $query);
                 
                 if ($result)
@@ -260,9 +264,9 @@ class DBStore implements TokenStore
         try
         {
             $connection = $this->getMysqlConnection();
-            
-            $query = "delete from oauthtoken";
-            
+
+            $query = "delete from " . $this->tableName;
+
             mysqli_query($connection, $query);
             
         }
@@ -287,8 +291,8 @@ class DBStore implements TokenStore
             
         }
         $query = $is_delete ? "delete from " : "select * from ";
-        
-        $query .= "oauthtoken where user_mail='" . $email. "' and client_id='" . $token->getClientId() . "' and ";
+
+        $query .= $this->tableName . " where user_mail='" . $email. "' and client_id='" . $token->getClientId() . "' and ";
 
         if ($token->getGrantToken() != null)
         {
@@ -298,7 +302,7 @@ class DBStore implements TokenStore
         {
             $query .= "refresh_token='" . $token->getRefreshToken() . "'";
         }
-        
+
         return $query;
     }
 }
