@@ -29,7 +29,28 @@ class JSONConverter extends Converter
 
     public function appendToRequest(&$requestBase, $requestObject)
     {
-        $requestBase[CURLOPT_POSTFIELDS] = json_encode($requestObject, JSON_UNESCAPED_UNICODE);
+        $array = $this->serialiseRequestArray($requestObject);
+
+        $requestBase[CURLOPT_POSTFIELDS] = json_encode($array, JSON_UNESCAPED_UNICODE);
+    }
+
+    private function serialiseRequestArray($input)
+    {
+        $output = [];
+
+        foreach ($input as $key => $value) {
+            if ($value instanceof Record) {
+                $value = $value->getKeyValues();
+            }
+
+            if (is_array($value)) {
+                $value = $this->serialiseRequestArray($value);
+            }
+
+            $output[$key] = $value;
+        }
+
+        return $output;
     }
 
     public function formRequest($requestInstance, $pack, $instanceNumber, $memberDetail=null)
