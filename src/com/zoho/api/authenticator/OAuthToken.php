@@ -435,7 +435,7 @@ class OAuthToken implements Token
     
     public function isAccessTokenExpired($expiry_time)
     {
-        return ((((int)$expiry_time) - $this->getCurrentTimeInMillis()) < 5000);
+        return ((((double)$expiry_time) - $this->getCurrentTimeInMillis()) < 5000);
     }
     
     public function getUrlParamsAsString($urlParams)

@@ -320,7 +320,7 @@ class RecordOperations
 		$handlerInstance->setContentType('multipart/form-data'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
-		Utility::getModules(); 
+		Utility::verifyPhotoSupport($moduleAPIName); 
 		return $handlerInstance->apiCall(FileHandler::class, 'application/json'); 
 
 	}

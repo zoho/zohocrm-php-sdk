@@ -510,7 +510,7 @@ class Utility
                     $fieldsDetails[$field->getAPIName()] = $fieldDetail;
                 }
 
-                if(in_array($moduleAPIName, Constants::INVENTORY_MODULES))
+                if(strtolower($moduleAPIName) == strtolower(Constants::NOTES))
                 {
                     $fieldDetail = array();
                     
@@ -522,7 +522,7 @@ class Utility
                     
                     $fieldsDetails[Constants::ATTACHMENTS] =  $fieldDetail;
                 }
-                if(strtolower($moduleAPIName) === strtolower(Constants::NOTES))
+                if(in_array(strtolower($moduleAPIName), Constants::INVENTORY_MODULES))
                 {
                     $fieldDetail = array();
                     
@@ -583,9 +583,9 @@ class Utility
         return null;
     }
 
-    public static function getModules()
+    public static function verifyPhotoSupport($moduleAPIName)
 	{
-        // self::$apiSupportedModule = count(self::$apiSupportedModule) > 0 ? self::$apiSupportedModule : self::getAllModules(null);
+        return;
     }
 
     private static function getAllModules($header)
