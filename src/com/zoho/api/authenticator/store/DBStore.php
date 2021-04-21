@@ -68,7 +68,7 @@ class DBStore implements TokenStore
                 {
                     while ($row = mysqli_fetch_row($result))
                     {
-                        $token->setAccessToken($row[4]);
+                        $token->setAccessToken($row[5]);
                         
                         $token->setExpiresIn($row[6]);
                         
