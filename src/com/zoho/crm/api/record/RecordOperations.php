@@ -48,7 +48,7 @@ class RecordOperations
 	 * @param BodyWrapper $request An instance of BodyWrapper
 	 * @return APIResponse An instance of APIResponse
 	 */
-	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request)
+	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request, HeaderMap $header_map)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
 		$apiPath=""; 
@@ -62,6 +62,7 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		Utility::getFields($moduleAPIName); 
+		$handlerInstance->setHeader($header_map); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
@@ -74,7 +75,7 @@ class RecordOperations
 	 * @param ParameterMap $paramInstance An instance of ParameterMap
 	 * @return APIResponse An instance of APIResponse
 	 */
-	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null)
+	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $header_map)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
 		$apiPath=""; 
@@ -86,6 +87,7 @@ class RecordOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setParam($paramInstance); 
+		$handlerInstance->setHeader($header_map); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}
