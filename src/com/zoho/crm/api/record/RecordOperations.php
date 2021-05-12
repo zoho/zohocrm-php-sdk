@@ -61,8 +61,8 @@ class RecordOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
-		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setHeader($header_map); 
+		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
