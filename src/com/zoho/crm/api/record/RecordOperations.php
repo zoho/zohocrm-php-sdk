@@ -48,7 +48,7 @@ class RecordOperations
 	 * @param BodyWrapper $request An instance of BodyWrapper
 	 * @return APIResponse An instance of APIResponse
 	 */
-	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request, HeaderMap $header_map)
+	public  function updateRecord(string $id, string $moduleAPIName, BodyWrapper $request, HeaderMap $header_map=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
 		$apiPath=""; 
@@ -75,7 +75,7 @@ class RecordOperations
 	 * @param ParameterMap $paramInstance An instance of ParameterMap
 	 * @return APIResponse An instance of APIResponse
 	 */
-	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $header_map)
+	public  function deleteRecord(string $id, string $moduleAPIName, ParameterMap $paramInstance=null, HeaderMap $header_map=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
 		$apiPath=""; 
