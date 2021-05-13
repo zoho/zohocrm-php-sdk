@@ -47,6 +47,8 @@ class Utility
 
     public static $apiSupportedModule = array();
 
+    public static $moduleAPIName;
+
     /**
      * This method to fetch field details of the current module for the current user and store the result in a JSON file.
      * @param string $moduleAPIName
@@ -54,6 +56,14 @@ class Utility
      */
     public static function getFields($moduleAPIName)
     {
+        self::$moduleAPIName = $moduleAPIName;
+
+        self::getFieldsInfo(self::$moduleAPIName);
+    }
+
+    public static function getFieldsInfo($moduleAPIName)
+    {
+
         $recordFieldDetailsPath = null;
 
         $lastModifiedTime = null;
@@ -269,7 +279,7 @@ class Utility
             
 			foreach($modifiedModules as $module => $value)
 			{
-				Utility::getFields($module);
+				Utility::getFieldsInfo($module);
 			}
 		}
     }
@@ -387,7 +397,7 @@ class Utility
                 {
     				$commonAPIHandler->setModuleAPIName($relatedListJO[Constants::MODULE]);
     				
-    				self::getFields($relatedListJO[Constants::MODULE]);
+    				self::getFieldsInfo($relatedListJO[Constants::MODULE]);
 			    }
     				
 				return true;
@@ -546,8 +556,13 @@ class Utility
                 $errorResponse[Constants::STATUS] = $exception->getStatus()->getValue();
                 
                 $errorResponse[Constants::MESSAGE] = $exception->getMessage()->getValue();
+
+                if(strtolower(self::$moduleAPIName) == strtolower($moduleAPIName))
+                {
+                    throw new SDKException(Constants::API_EXCEPTION, null, $errorResponse);
+                }
                 
-                throw new SDKException(Constants::API_EXCEPTION, null, $errorResponse);
+                SDKLogger::severeError(Constants::API_EXCEPTION, new \Exception(json_encode($errorResponse, true)));
             }
         }
         else
@@ -620,7 +635,7 @@ class Utility
             
             $moduleResponseWrapper = Constants::MODULE_RESPONSEWRAPPER;
             
-            $apiException =Constants::MODULE_API_EXCEPTION;
+            $apiException = Constants::MODULE_API_EXCEPTION;
             
             if($responseObject instanceof $moduleResponseWrapper)
             {
@@ -657,7 +672,7 @@ class Utility
     {
         self::$forceRefresh = true;
 
-        self::getFields(null);
+        self::getFieldsInfo(null);
 
         self::$forceRefresh = false;
     }
@@ -835,7 +850,7 @@ class Utility
 
         if (strlen($module) > 0) 
         {
-            Utility::getFields($module);
+            self::getFieldsInfo($module);
         }
 
         $fieldDetail[Constants::NAME] = $keyName;

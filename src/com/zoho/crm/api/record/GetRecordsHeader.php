@@ -11,4 +11,9 @@ class GetRecordsHeader
 		return new Header('If-Modified-Since', 'com.zoho.crm.api.Record.GetRecordsHeader'); 
 
 	}
+	public static final function XEXTERNAL()
+	{
+		return new Header('X-EXTERNAL', 'com.zoho.crm.api.Record.GetRecordsHeader'); 
+
+	}
 } 
