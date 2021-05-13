@@ -20,9 +20,7 @@ class ModuleFieldsHandler
 	 */
 	private static function getDirectory()
 	{
-        $resourcesPath = Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
-            
-		return $resourcesPath;
+        return Initializer::getInitializer()->getResourcePath() . DIRECTORY_SEPARATOR . Constants::FIELD_DETAILS_DIRECTORY;
 	}
 
 	private static function getFileName()
@@ -35,7 +33,7 @@ class ModuleFieldsHandler
 
 		return base64_encode(implode(array_map("chr", $input)));
 	}
-	
+
 	/**
 	 * The method to delete fields JSON File of the current user.
 	 * @throws SDKException
@@ -45,10 +43,10 @@ class ModuleFieldsHandler
 		try
 		{
 			$fileName = self::getFileName();
-            
+
             $recordFieldDetailsPath = self::getDirectory() . DIRECTORY_SEPARATOR . $fileName . ".json";
 
-            if (file_exists($recordFieldDetailsPath)) 
+            if (file_exists($recordFieldDetailsPath))
             {
                 unlink($recordFieldDetailsPath);
             }
@@ -58,11 +56,11 @@ class ModuleFieldsHandler
 			$sdkException = new SDKException(null, null, null, $e);
 
 			SDKLogger::severeError(Constants::DELETE_FIELD_FILE_ERROR, $sdkException);
-			
+
 			throw $sdkException;
 		}
 	}
-	
+
 	/**
 	 * The method to delete all the field JSON files under resources directory.
 	 */
@@ -71,15 +69,15 @@ class ModuleFieldsHandler
 		try
 		{
             $recordFieldDetailsDirectory = self::getDirectory();
-            
+
 			$files = glob($recordFieldDetailsDirectory.'/*.json');
-   
-            // Deleting all the files in the list 
+
+            // Deleting all the files in the list
             foreach($files as $file)
-            { 
-                if(is_file($file))  
-                    // Delete the given file 
-                    unlink($file);  
+            {
+                if(is_file($file))
+                    // Delete the given file
+                    unlink($file);
             }
 		}
 		catch (\Exception $e)
@@ -91,7 +89,7 @@ class ModuleFieldsHandler
 			throw $sdkException;
 		}
 	}
-	
+
 	/**
 	 * The method to delete fields of the given module from the current user's fields JSON file.
 	 * @param module A string representing the module.
@@ -101,24 +99,22 @@ class ModuleFieldsHandler
 		try
 		{
             $recordFieldDetailsPath = self::getDirectory() . DIRECTORY_SEPARATOR . self::getFileName() . ".json";
-            
-            if (file_exists($recordFieldDetailsPath)) 
+
+            if (file_exists($recordFieldDetailsPath))
             {
 				$recordFieldDetailsJSON = Initializer::getJSON($recordFieldDetailsPath);
 
 				if(array_key_exists(strtolower($module), $recordFieldDetailsJSON))
                 {
                     Utility::deleteFields($recordFieldDetailsJSON, $module);
-					
+
 					file_put_contents($recordFieldDetailsPath, json_encode($recordFieldDetailsJSON));
                 }
             }
 		}
 		catch (\Exception $e)
 		{
-			$sdkException = new SDKException(null, null, null, $e);
-
-			throw $sdkException;
+			throw new SDKException(null, null, null, $e);
 		}
 	}
 
@@ -133,8 +129,8 @@ class ModuleFieldsHandler
 			self::deleteFields($module);
 
 			Utility::getFields($module);
-		} 
-		catch (SDKException $ex) 
+		}
+		catch (SDKException $ex)
 		{
 			SDKLogger::severeError(Constants::REFRESH_SINGLE_MODULE_FIELDS_ERROR . $module, $ex);
 
@@ -152,11 +148,11 @@ class ModuleFieldsHandler
 
 	public static function refreshAllModules()
 	{
-		try 
+		try
 		{
 			Utility::refreshModules();
-		} 
-		catch (SDKException $ex) 
+		}
+		catch (SDKException $ex)
 		{
 			SDKLogger::severeError(Constants::REFRESH_ALL_MODULE_FIELDS_ERROR, $ex);
 

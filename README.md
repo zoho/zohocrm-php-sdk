@@ -78,7 +78,7 @@ You can include the SDK to your project using:
   - Run the command below:
 
     ```sh
-    composer require zohocrm/php-sdk:3.0.3
+    composer require zohocrm/php-sdk:3.1.0
     ```
 
   - The PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
