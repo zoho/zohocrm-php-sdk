@@ -78,7 +78,7 @@ You can include the SDK to your project using:
   - Run the command below:
 
     ```sh
-    composer require zohocrm/php-sdk:3.1.0
+    composer require zohocrm/php-sdk-2.0
     ```
 
   - The PHP SDK will be installed and a package named vendor will be created in the workspace of your client app.
@@ -582,7 +582,7 @@ All other exceptions such as SDK anomalies and other unexpected behaviours are t
 
 ## Multi-User support in the PHP SDK
 
-The **PHP SDK** (from version 3.x.x) supports both single user and a multi-user app.
+The **PHP SDK** (from version 1.x.x) supports both single user and a multi-user app.
 
 ### Multi-user App
 

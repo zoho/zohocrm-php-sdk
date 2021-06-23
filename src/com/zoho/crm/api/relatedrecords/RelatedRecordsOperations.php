@@ -17,18 +17,21 @@ class RelatedRecordsOperations
 	private  $moduleAPIName;
 	private  $recordId;
 	private  $relatedListAPIName;
+	private  $xExternal;
 
 	/**
 	 * Creates an instance of RelatedRecordsOperations with the given parameters
 	 * @param string $relatedListAPIName A string
 	 * @param string $recordId A string
 	 * @param string $moduleAPIName A string
+	 * @param string $xExternal A string
 	 */
-	public function __Construct(string $relatedListAPIName, string $recordId, string $moduleAPIName)
+	public function __Construct(string $relatedListAPIName, string $recordId, string $moduleAPIName, string $xExternal=null)
 	{
 		$this->relatedListAPIName=$relatedListAPIName; 
 		$this->recordId=$recordId; 
 		$this->moduleAPIName=$moduleAPIName; 
+		$this->xExternal=$xExternal; 
 
 	}
 
@@ -51,6 +54,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.GetRelatedRecordsHeader'), $this->xExternal); 
 		$handlerInstance->setParam($paramInstance); 
 		$handlerInstance->setHeader($headerInstance); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
@@ -79,6 +83,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.UpdateRelatedRecordsHeader'), $this->xExternal); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
@@ -102,6 +107,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.DelinkRecordsHeader'), $this->xExternal); 
 		$handlerInstance->setParam($paramInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
@@ -128,6 +134,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.GetRelatedRecordHeader'), $this->xExternal); 
 		$handlerInstance->setHeader($headerInstance); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
@@ -157,6 +164,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_UPDATE); 
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.UpdateRelatedRecordHeader'), $this->xExternal); 
 		Utility::getRelatedLists($this->relatedListAPIName, $this->moduleAPIName, $handlerInstance); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
@@ -182,6 +190,7 @@ class RelatedRecordsOperations
 		$handlerInstance->setAPIPath($apiPath); 
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_DELETE); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_METHOD_DELETE); 
+		$handlerInstance->addHeader(new Header('X-EXTERNAL', 'com.zoho.crm.api.RelatedRecords.DelinkRecordHeader'), $this->xExternal); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 
 
 	}

@@ -238,6 +238,14 @@ class Test
 		ContactRoles::updateContactRole($contactRoleId);
 		
 		ContactRoles::deleteContactRole($contactRoleId);
+
+		ContactRoles::getAllContactRolesOfDeal("dealId");
+
+		ContactRoles::getContactRoleOfDeal("contactId", "dealId");
+
+		ContactRoles::addContactRoleToDeal("contactId", "dealId");
+
+		ContactRoles::removeContactRoleFromDeal("contactId", "dealId");
     }
 
     public static function Currency()

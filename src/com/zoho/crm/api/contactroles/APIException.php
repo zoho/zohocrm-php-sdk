@@ -4,7 +4,7 @@ namespace com\zoho\crm\api\contactroles;
 use com\zoho\crm\api\util\Choice;
 use com\zoho\crm\api\util\Model;
 
-class APIException implements Model, ResponseHandler, ActionResponse, ActionHandler
+class APIException implements Model, ResponseHandler, ActionResponse, ActionHandler, RecordResponseHandler, RecordActionHandler
 {
 
 	private  $status;

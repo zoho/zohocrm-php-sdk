@@ -122,9 +122,10 @@ class RecordOperations
 	 * The method to create records
 	 * @param string $moduleAPIName A string
 	 * @param BodyWrapper $request An instance of BodyWrapper
+	 * @param HeaderMap $headerInstance An instance of HeaderMap
 	 * @return APIResponse An instance of APIResponse
 	 */
-	public  function createRecords(string $moduleAPIName, BodyWrapper $request)
+	public  function createRecords(string $moduleAPIName, BodyWrapper $request, HeaderMap $headerInstance=null)
 	{
 		$handlerInstance=new CommonAPIHandler(); 
 		$apiPath=""; 
@@ -136,6 +137,7 @@ class RecordOperations
 		$handlerInstance->setContentType('application/json'); 
 		$handlerInstance->setRequest($request); 
 		$handlerInstance->setMandatoryChecker(true); 
+		$handlerInstance->setHeader($headerInstance); 
 		Utility::getFields($moduleAPIName); 
 		$handlerInstance->setModuleAPIName($moduleAPIName); 
 		return $handlerInstance->apiCall(ActionHandler::class, 'application/json'); 

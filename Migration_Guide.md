@@ -1,5 +1,7 @@
 # Migrating from Zoho CRM PHP SDK 2.x to 3.x
 
+Migrating from [zohocrm/php-sdk-archive](https://packagist.org/packages/zohocrm/php-sdk-archive) to zohocrm/php-sdk-2.0
+
 1. [Organization](#organization)
     - [Get OrganizationDetails](#get-organizationdetails)
 2. [User](#user)
@@ -99,7 +101,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/restclient-sample.html?src=organization_details)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of OrgOperations Class
@@ -123,7 +125,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/restclient-sample.html?src=current_user)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of UsersOperations Class
@@ -149,7 +151,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=user_details)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of UsersOperations Class
@@ -180,7 +182,7 @@
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_user)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of UsersOperations Class
@@ -232,7 +234,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_user)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of UsersOperations Class
@@ -267,7 +269,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_user)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of UsersOperations Class
@@ -291,7 +293,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=all_profiles)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of ProfilesOperations Class
@@ -313,7 +315,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=profile_data)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of ProfilesOperations Class
@@ -338,7 +340,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=all_roles)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RolesOperations Class
@@ -360,7 +362,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=role_data)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RolesOperations Class
@@ -384,7 +386,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_org_taxes)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -406,7 +408,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_org_tax)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -432,7 +434,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_org_tax)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -474,7 +476,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_org_tax)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -518,7 +520,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_org_taxes)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -546,7 +548,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_org_tax)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TaxesOperations Class
@@ -573,7 +575,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_notes)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of NotesOperations Class
@@ -610,7 +612,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_notes)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of NotesOperations Class
@@ -655,7 +657,7 @@
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=delete_notes)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of NotesOperations Class
@@ -686,7 +688,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_note)
 
-- v3.x.x
+- v1.x.x
 
   - [Create Notes](#create-notes)
 
@@ -706,7 +708,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=update_note)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of NotesOperations Class
@@ -743,7 +745,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_note)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of NotesOperations Class
@@ -767,7 +769,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_variables)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -813,7 +815,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=create_variables)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -886,7 +888,7 @@
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=update_variables)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -932,7 +934,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=get_variable)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -960,7 +962,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=update_variable)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -995,7 +997,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=delete_variable)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariablesOperations Class
@@ -1019,7 +1021,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/organization-sample.html?src=get_variable_groups)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariableGroupsOperations Class
@@ -1042,7 +1044,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/variable-samples.html?src=get_variable_group)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of VariableGroupsOperations Class
@@ -1066,7 +1068,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_fields)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of FieldsOperations Class that takes moduleAPIName as parameter
@@ -1091,7 +1093,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=field_details)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of FieldsOperations Class that takes moduleAPIName as parameter
@@ -1115,7 +1117,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_layouts)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of LayoutsOperations Class that takes moduleAPIName as parameter
@@ -1137,7 +1139,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=layout_details)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of LayoutsOperations Class that takes moduleAPIName as parameter
@@ -1164,7 +1166,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_custom_views)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of CustomViewOperations Class that takes moduleAPIName as parameter
@@ -1186,7 +1188,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=custom_view_details)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of CustomViewOperations Class that takes moduleAPIName as parameter
@@ -1210,7 +1212,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=all_related_lists)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RelatedListsOperations Class that takes moduleAPIName as parameter
@@ -1232,7 +1234,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=related_list_details)
 
-    - v3.x.x
+    - v1.x.x
 
         ```php
         //Get instance of RelatedListsOperations Class that takes moduleAPIName as parameter
@@ -1259,7 +1261,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=records_list)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1311,7 +1313,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=get_record)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -1402,7 +1404,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=search_record_criteria)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //example, moduleAPIName = "Leads";
@@ -1417,8 +1419,10 @@
     $paramInstance->add(SearchRecordsParam::approved(), "both");
     $paramInstance->add(SearchRecordsParam::page(), 1);
     $paramInstance->add(SearchRecordsParam::perPage(), 2);
+
+    $headerInstance = new HeaderMap();
     //Call getRecords method
-    $response = $recordOperations->searchRecords($moduleAPIName,$paramInstance);
+    $response = $recordOperations->searchRecords($moduleAPIName, $paramInstance, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=search_records)
@@ -1487,7 +1491,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=update_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -1544,8 +1548,10 @@
     $request->setData($records);
     $trigger = array("approval", "workflow", "blueprint");
     $request->setTrigger($trigger);
+
+    $headerInstance = new HeaderMap();
     //Call createRecords method that takes BodyWrapper instance and moduleAPIName as parameter.
-    $response = $recordOperations->updateRecords($moduleAPIName, $request);
+    $response = $recordOperations->updateRecords($moduleAPIName, $request, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=update_records)
@@ -1591,7 +1597,7 @@
 
 [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=create_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1771,8 +1777,9 @@
     $trigger = array("approval", "workflow", "blueprint");
     $bodyWrapper->setTrigger($trigger);
     //bodyWrapper.setLarId("347706187515");
+    $headerInstance = new HeaderMap();
     //Call createRecords method that takes BodyWrapper instance as parameter.
-    $response = $recordOperations->createRecords($moduleAPIName,$bodyWrapper);
+    $response = $recordOperations->createRecords($moduleAPIName, $bodyWrapper, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=create_records)
@@ -1792,7 +1799,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=delete_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //API Name of the module to update record
@@ -1806,8 +1813,9 @@
         $paramInstance->add(DeleteRecordsParam::ids(), $id);
     }
     // $paramInstance->add(DeleteRecordsParam::wfTrigger(), "true");
+    $headerInstance = new HeaderMap();
     //Call deleteRecord method that takes ModuleAPIName and recordId as parameter.
-    $response = $recordOperations->deleteRecords($moduleAPIName,$paramInstance);
+    $response = $recordOperations->deleteRecords($moduleAPIName, $paramInstance, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=delete_records)
@@ -1852,7 +1860,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=permanently_deleted_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -1895,7 +1903,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=upsert_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class that takes moduleAPIName as parameter
@@ -1950,8 +1958,9 @@
     $request->setDuplicateCheckFields($duplicateCheckFields);
     //Set the list to Records in BodyWrapper instance
     $request->setData($records);
+    $headerInstance = new HeaderMap();
     //Call createRecords method that takes BodyWrapper instance as parameter.
-    $response = $recordOperations->upsertRecords($moduleAPIName, $request);
+    $response = $recordOperations->upsertRecords($moduleAPIName, $request, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=upsert_records)
@@ -1970,7 +1979,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=mass_update_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2044,7 +2053,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=create_record)
 
-- v3.x.x
+- v1.x.x
 
   - [Create a Record](#create-records)
 
@@ -2084,7 +2093,7 @@
 
     [sample code](zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=update_record)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2133,8 +2142,9 @@
     $request->setData($records);
     $trigger = array("approval", "workflow", "blueprint");
     $request->setTrigger($trigger);
+    $headerInstance = new HeaderMap();
     //Call updateRecord method that takes BodyWrapper instance, ModuleAPIName and recordId as parameter.
-    $response = $recordOperations->updateRecord( $recordId, $moduleAPIName,$request);
+    $response = $recordOperations->updateRecord( $recordId, $moduleAPIName, $request, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=update_record)
@@ -2150,7 +2160,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_record)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2158,8 +2168,9 @@
     //Get instance of ParameterMap Class
     $paramInstance = new ParameterMap();
     $paramInstance->add(DeleteRecordParam::wfTrigger(), false);
+    $headerInstance = new HeaderMap();
     //Call deleteRecord method that takes paramInstance, ModuleAPIName and recordId as parameter.
-    $response = $recordOperations->deleteRecord($recordId,$moduleAPIName, $paramInstance);
+    $response = $recordOperations->deleteRecord($recordId,$moduleAPIName, $paramInstance, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/record-samples.html?src=delete_record)
@@ -2180,7 +2191,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=convert_record)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2244,7 +2255,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=upload_photo)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2272,7 +2283,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=download_photo)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2294,7 +2305,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_photo)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RecordOperations Class
@@ -2318,7 +2329,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=get_tags)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     $tagsOperations = new TagsOperations();
@@ -2343,7 +2354,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=tag_count)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     $tagsOperations = new TagsOperations();
@@ -2371,7 +2382,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=create_tags)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2413,7 +2424,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=update_tags)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2457,7 +2468,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=add_tags)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2499,7 +2510,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/module-sample.html?src=remove_tags)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2534,7 +2545,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_tags_to_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2567,7 +2578,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=remove_tags_from_records)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of TagsOperations Class
@@ -2601,7 +2612,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=get_attachments)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2623,7 +2634,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=upload_attachments)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2651,7 +2662,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=link_attachments)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     /Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2676,7 +2687,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=download_attachments)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2698,7 +2709,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=delete_attachments)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of AttachmentsOperations Class that takes recordId and moduleAPIName as parameter
@@ -2723,7 +2734,7 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=add_relation)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
@@ -2744,8 +2755,9 @@
     array_push($records, $record1);
     //Set the list to Records in BodyWrapper instance
     $request->setData($records);
+    $headerInstance = new HeaderMap();
     //Call updateRecord method that takes BodyWrapper instance, relatedRecordId as parameter.
-    $response = $relatedRecordsOperations->updateRelatedRecord($relatedListId,$request);
+    $response = $relatedRecordsOperations->updateRelatedRecord($relatedListId, $request, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=update_rel_record)
@@ -2762,13 +2774,14 @@
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/record-samples.html?src=remove_relation)
 
-- v3.x.x
+- v1.x.x
 
     ```php
     //Get instance of RelatedRecordsOperations Class that takes moduleAPIName, recordId and relatedListAPIName as parameter
     $relatedRecordsOperations = new RelatedRecordsOperations($relatedListAPIName,$recordId,$moduleAPIName);
+    $headerInstance = new HeaderMap();
     //Call updateRecord method that takes relatedListId as parameter.
-    $response = $relatedRecordsOperations->delinkRecord($relatedListId);
+    $response = $relatedRecordsOperations->delinkRecord($relatedListId, $headerInstance);
     ```
 
     [sample code](https://www.zoho.com/crm/developer/docs/php-sdk/v3/rel-records-samples.html?src=delink_single)

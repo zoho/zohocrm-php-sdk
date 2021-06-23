@@ -1,5 +1,5 @@
 {
-	"name" : "zohocrm/php-sdk",
+	"name" : "zohocrm/php-sdk-2.0",
 	"description" : "Zoho CRM API SDK for PHP",
 	"type" : "sdk",
 	"homepage": "https://github.com/zoho/zohocrm-php-sdk",
