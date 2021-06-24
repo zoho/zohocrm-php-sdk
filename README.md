@@ -1,3 +1,6 @@
+# Archival Notice:
+This SDK is deprecated. You can continue to use it, but no new features or support requests will be accepted. Use [zohocrm-php-sdk-2.0](https://github.com/zoho/zohocrm-php-sdk-2.0) , instead.
+
 # ZOHO CRM PHP SDK
 
 ## Table Of Contents
