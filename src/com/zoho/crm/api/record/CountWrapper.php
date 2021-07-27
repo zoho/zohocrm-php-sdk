@@ -10,7 +10,7 @@ class CountWrapper implements Model, CountHandler
 
 	/**
 	 * The method to get the data
-	 * @return int A array representing the data
+	 * @return int Count of Records
 	 */
 	public  function getCount()
 	{
