@@ -257,8 +257,9 @@ class RecordOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
-		Utility::getFields($moduleAPIName); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
+		Utility::getFields($moduleAPIName);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
 		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
 	}
