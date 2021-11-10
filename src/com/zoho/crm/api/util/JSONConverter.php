@@ -1034,7 +1034,7 @@ class JSONConverter extends Converter
                     $keyName = $memberDetail[Constants::NAME];
                 }
                 
-                if ($keyName != null && array_key_exists($keyName, $responseJson) && (is_array($responseJson[$keyName]) || $responseJson[$keyName] != null))
+                if ($keyName != null && array_key_exists($keyName, $responseJson) && (is_array($responseJson[$keyName]) || $responseJson[$keyName] !== null))
                 {
                     $keyData = $responseJson[$keyName];
 
