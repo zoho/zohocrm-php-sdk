@@ -30,23 +30,23 @@ class TokenType
  */
 class OAuthToken implements Token
 {
-    private $clientID = null;
+    protected $clientID = null;
     
-    private $clientSecret = null;
+    protected $clientSecret = null;
     
-    private $redirectURL = null;
+    protected $redirectURL = null;
     
-    private $grantToken = null;
+    protected $grantToken = null;
     
-    private $refreshToken = null;
+    protected $refreshToken = null;
     
-    private $accessToken = null;
+    protected $accessToken = null;
     
-    private $expiresIn = null;
+    protected $expiresIn = null;
     
-    private $userMail = null;
+    protected $userMail = null;
 
-    private $id = null;
+    protected $id = null;
     
     /**
      * Creates an OAuthToken class instance with the specified parameters.
