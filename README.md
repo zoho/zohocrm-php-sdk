@@ -446,6 +446,8 @@ class Initialize
 
         $pickListValidation = false;
 
+        $enableSSLVerification = true;
+
         $connectionTimeout = 2;
 
         $timeout = 2;
@@ -652,6 +654,8 @@ class MultiThread
 
         $pickListValidation = false;
 
+        $enableSSLVerification = true;
+
         $connectionTimeout = 2;
 
         $timeout = 2;
@@ -668,7 +672,7 @@ class MultiThread
 
         $user2 = new UserSignature("abc2@zoho.eu");
 
-        $token2 = new OAuthToken("clientId2", "clientSecrect2", "REFRESH/GRANT token", TokenType.REFRESH/GRANT);
+        $token2 = new OAuthToken("clientId2", "clientSecrect2", "REFRESH/GRANT token", TokenType::REFRESH/GRANT);
 
         Initializer::switchUser($user2, $environment2, $token2, $sdkConfig);
 
@@ -802,6 +806,8 @@ class Record
         $autoRefreshFields = false;
 
         $pickListValidation = false;
+
+        $enableSSLVerification = true;
 
         $connectionTimeout = 2;
 
