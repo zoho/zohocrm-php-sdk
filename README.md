@@ -446,6 +446,8 @@ class Initialize
 
         $pickListValidation = false;
 
+        $enableSSLVerification = true;
+
         $connectionTimeout = 2;
 
         $timeout = 2;
@@ -646,11 +648,13 @@ class MultiThread
 
         $tokenstore = new FileStore("/Users/user_name/Documents/php_sdk_token.txt");
 
-        $token1 = new OAuthToken("clientId1", "clientSecrect1", "REFRESH/GRANT token", TokenType.REFRESH/GRANT, "redirectURL1");
+        $token1 = new OAuthToken("clientId1", "clientSecrect1", "REFRESH/GRANT token", TokenType::REFRESH/GRANT, "redirectURL1");
 
         $autoRefreshFields = false;
 
         $pickListValidation = false;
+
+        $enableSSLVerification = true;
 
         $connectionTimeout = 2;
 
@@ -668,7 +672,7 @@ class MultiThread
 
         $user2 = new UserSignature("abc2@zoho.eu");
 
-        $token2 = new OAuthToken("clientId2", "clientSecrect2", "REFRESH/GRANT token", TokenType.REFRESH/GRANT);
+        $token2 = new OAuthToken("clientId2", "clientSecrect2", "REFRESH/GRANT token", TokenType::REFRESH/GRANT);
 
         Initializer::switchUser($user2, $environment2, $token2, $sdkConfig);
 
@@ -792,7 +796,7 @@ class Record
         $environment = USDataCenter::PRODUCTION();
 
         //Create a Token instance
-        $token = new OAuthToken("clientId", "clientSecrect", "REFRESH/GRANT token", TokenType.REFRESH/GRANT, "redirectURL");
+        $token = new OAuthToken("clientId", "clientSecrect", "REFRESH/GRANT token", TokenType::REFRESH/GRANT, "redirectURL");
 
         //Create an instance of TokenStore
         // $tokenstore = new DBStore();
@@ -802,6 +806,8 @@ class Record
         $autoRefreshFields = false;
 
         $pickListValidation = false;
+
+        $enableSSLVerification = true;
 
         $connectionTimeout = 2;
 
