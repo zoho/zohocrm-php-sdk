@@ -648,7 +648,7 @@ class MultiThread
 
         $tokenstore = new FileStore("/Users/user_name/Documents/php_sdk_token.txt");
 
-        $token1 = new OAuthToken("clientId1", "clientSecrect1", "REFRESH/GRANT token", TokenType.REFRESH/GRANT, "redirectURL1");
+        $token1 = new OAuthToken("clientId1", "clientSecrect1", "REFRESH/GRANT token", TokenType::REFRESH/GRANT, "redirectURL1");
 
         $autoRefreshFields = false;
 
@@ -796,7 +796,7 @@ class Record
         $environment = USDataCenter::PRODUCTION();
 
         //Create a Token instance
-        $token = new OAuthToken("clientId", "clientSecrect", "REFRESH/GRANT token", TokenType.REFRESH/GRANT, "redirectURL");
+        $token = new OAuthToken("clientId", "clientSecrect", "REFRESH/GRANT token", TokenType::REFRESH/GRANT, "redirectURL");
 
         //Create an instance of TokenStore
         // $tokenstore = new DBStore();
