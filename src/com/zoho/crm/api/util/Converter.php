@@ -274,7 +274,7 @@ abstract class Converter
 
 		$fileName = explode("@",$fileName)[0] . Initializer::getInitializer()->getEnvironment()->getUrl();
 
-		$input = unpack('C*', utf8_encode($fileName));
+		$input = unpack('C*', mb_convert_encoding($fileName, 'UTF-8'));
 
 		$str = base64_encode(implode(array_map("chr", $input)));
 		
