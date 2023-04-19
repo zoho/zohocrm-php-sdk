@@ -1,13 +1,18 @@
 {
-	"name" : "zohocrm/php-sdk",
+	"name" : "templatemonster/zohocrm-php-sdk",
 	"description" : "Zoho CRM API SDK for PHP",
 	"type" : "sdk",
-	"homepage": "https://github.com/zoho/zohocrm-php-sdk",
+	"homepage": "https://github.com/Plasma-Platform/zohocrm-php-sdk",
 	"authors" : [
 		{
 			"name" : "Zoho CRM API Team",
 			"email" : "support@zohocrm.com",
 			"homepage" : "https://www.zoho.com/crm/help/customer-support.html",
+			"role" : "Developer"
+		},
+		{
+			"name" : "Pavlo Titkov",
+			"email" : "ch@templatemonster.me",
 			"role" : "Developer"
 		}
 	],
