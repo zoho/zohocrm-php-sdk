@@ -109,11 +109,11 @@ class FormDataConverter extends Converter
                     
                     $date = new \DateTime();
                     
-                    $data = utf8_encode($lineEnd);
+                    $data = mb_convert_encoding($lineEnd, 'UTF-8');
                     
                     $current_time_long = $date->getTimestamp();
                     
-                    $boundaryStart = utf8_encode($hypen.(string)$current_time_long.$lineEnd);
+                    $boundaryStart = mb_convert_encoding($hypen.(string)$current_time_long.$lineEnd, 'UTF-8');
                     
                     for ($i = 0; $i < sizeof($keysDetail); $i++)
                     {
@@ -129,14 +129,14 @@ class FormDataConverter extends Converter
                             
                             $contentDisp = "Content-Disposition: form-data; name=\"".$key."\";filename=\"".$fileName."\"".$lineEnd.$lineEnd;
                             
-                            $data = $data.utf8_encode($contentDisp);
+                            $data = $data.mb_convert_encoding($contentDisp, 'UTF-8');
                             
-                            $data = $data.$fileData.utf8_encode($lineEnd);
+                            $data = $data.$fileData.mb_convert_encoding($lineEnd, 'UTF-8');
                         }                  
                     }
                     $boundaryend = $hypen . (string)$current_time_long . $hypen . $lineEnd . $lineEnd;
                     
-                    $data = $data . utf8_encode($boundaryend);
+                    $data = $data . mb_convert_encoding($boundaryend, 'UTF-8');
                     
                     $header = ['ENCTYPE: multipart/form-data','Content-Type:multipart/form-data;boundary=' . (string)$current_time_long];
                     
@@ -160,19 +160,19 @@ class FormDataConverter extends Converter
                     
                     $header = ['ENCTYPE: multipart/form-data','Content-Type:multipart/form-data;boundary='.(string)$current_time_long];
                     
-                    $data = utf8_encode($lineEnd);
+                    $data = mb_convert_encoding($lineEnd, 'UTF-8');
                     
-                    $boundaryStart = utf8_encode($hypen.(string)$current_time_long.$lineEnd) ;
+                    $boundaryStart = mb_convert_encoding($hypen.(string)$current_time_long.$lineEnd, 'UTF-8') ;
                     
                     $data = $data.$boundaryStart;
                     
-                    $data = $data.utf8_encode($contentDisp);
+                    $data = $data.mb_convert_encoding($contentDisp, 'UTF-8');
                     
-                    $data = $data.$fileData.utf8_encode($lineEnd);
+                    $data = $data.$fileData.mb_convert_encoding($lineEnd, 'UTF-8');
                     
                     $boundaryend = $hypen.(string)$current_time_long.$hypen.$lineEnd.$lineEnd;
                     
-                    $data = $data.utf8_encode($boundaryend);
+                    $data = $data.mb_convert_encoding($boundaryend, 'UTF-8');
                     
                     $requestBase[CURLOPT_HTTPHEADER] = $header;
                     
