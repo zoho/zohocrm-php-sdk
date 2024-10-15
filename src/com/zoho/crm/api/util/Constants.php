@@ -500,6 +500,8 @@ class Constants
 
     const MODULE_RESPONSEWRAPPER = "com\zoho\crm\api\modules\ResponseWrapper";
 
+    const MODULE_COUNTWRAPPER = "com\zoho\crm\api\modules\CountWrapper";
+
     const MODULE_API_EXCEPTION = "com\zoho\crm\api\modules\APIException";
 
     const JSON_DETAILS_FILE_PATH = "src/resources/JSONDetails.json";

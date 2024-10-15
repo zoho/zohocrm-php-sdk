@@ -257,11 +257,33 @@ class RecordOperations
 		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET); 
 		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ); 
 		$handlerInstance->setParam($paramInstance); 
-		$handlerInstance->setHeader($headerInstance); 
-		Utility::getFields($moduleAPIName); 
-		$handlerInstance->setModuleAPIName($moduleAPIName); 
-		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json'); 
+		Utility::getFields($moduleAPIName);
+		$handlerInstance->setHeader($headerInstance);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		return $handlerInstance->apiCall(ResponseHandler::class, 'application/json');
 
+	}
+
+	/**
+	 * The method to count records
+	 * @param string $moduleAPIName A string
+	 * @param ParameterMap $paramInstance An instance of ParameterMap
+	 * @return APIResponse An instance of APIResponse
+	 */
+	public  function countRecords(string $moduleAPIName, ParameterMap $paramInstance=null)
+	{
+		$handlerInstance=new CommonAPIHandler();
+		$apiPath="";
+		$apiPath=$apiPath.('/crm/v2.1/');
+		$apiPath=$apiPath.(strval($moduleAPIName));
+		$apiPath=$apiPath.('/actions/count');
+		$handlerInstance->setAPIPath($apiPath);
+		$handlerInstance->setHttpMethod(Constants::REQUEST_METHOD_GET);
+		$handlerInstance->setCategoryMethod(Constants::REQUEST_CATEGORY_READ);
+		$handlerInstance->setParam($paramInstance);
+		Utility::getFields($moduleAPIName);
+		$handlerInstance->setModuleAPIName($moduleAPIName);
+		return $handlerInstance->apiCall(CountHandler::class, 'application/json');
 	}
 
 	/**
