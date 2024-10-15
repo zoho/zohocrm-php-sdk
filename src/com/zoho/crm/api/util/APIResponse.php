@@ -60,7 +60,7 @@ class APIResponse
     
     /**
      * This is a getter method to get an API response instance that is the expected type or not.
-     * @return Boolean representing the instance is expected type or not.
+     * @return bool representing the instance is expected type or not.
      */
     public function isExpected()
     {
