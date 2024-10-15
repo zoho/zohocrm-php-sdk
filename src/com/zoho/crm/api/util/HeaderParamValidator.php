@@ -60,7 +60,7 @@ class HeaderParamValidator
 
         if(is_null($json_Details))
         {
-            $json_Details = json_decode(file_get_contents(explode("src", realpath(__DIR__))[0] . Constants::JSON_DETAILS_FILE_PATH), true);
+            $json_Details = json_decode(file_get_contents(join("src", explode("src", realpath(__DIR__), -1)) . Constants::JSON_DETAILS_FILE_PATH), true);
 
             Initializer::$jsonDetails = $json_Details;
         }
