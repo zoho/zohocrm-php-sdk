@@ -227,7 +227,7 @@ class CommonAPIHandler
         }
         catch(SDKException $e)
         {
-            SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $ex);
+            SDKLogger::severeError(Constants::SET_API_URL_EXCEPTION, $e);
                     
             throw $e;
         }
